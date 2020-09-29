@@ -1,3 +1,13 @@
 *.pyc
 
 build_artifacts
+
+# jetbrains ide stuff
+*.iml
+.idea/
+
+# vscode ide stuff
+*.code-workspace
+.history
+.vscode/*
+!.vscode/*.template
