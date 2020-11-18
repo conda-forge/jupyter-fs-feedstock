@@ -5,9 +5,11 @@ Home: http://github.com/jpmorganchase/jupyter-fs
 
 Package license: Apache-2.0
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/jupyter-fs-feedstock/blob/master/LICENSE.txt)
 
 Summary: A Filesystem-like multi-contents manager backend for Jupyter
+
+Development: https://github.com/jpmorganchase/jupyter-fs
 
 A Filesystem-like mult-contents manager backend for Jupyter
 
