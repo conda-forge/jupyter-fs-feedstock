@@ -33,6 +33,10 @@ requirements:
 test:
   imports:
     - jupyterfs
+  requires:
+    - pip
+  commands:
+    - pip check
 
 about:
   home: http://github.com/jpmorganchase/jupyter-fs
@@ -40,9 +44,7 @@ about:
   license_family: Apache
   license_file: LICENSE
   summary: A Filesystem-like multi-contents manager backend for Jupyter
-
-  description: |
-    A Filesystem-like mult-contents manager backend for Jupyter
+  description: A Filesystem-like mult-contents manager backend for Jupyter
   dev_url: https://github.com/jpmorganchase/jupyter-fs
 
 extra:
