@@ -26,6 +26,7 @@ requirements:
   run:
     - fs >=2.4.11
     - fs-s3fs >=1.1.1
+    - fs.smbfs >=0.6.3
     - jupyterlab >=4,<5
     - jupyter_server >=2,<3
     - python >=3.7
