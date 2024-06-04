@@ -1,5 +1,5 @@
 {% set name = "jupyter-fs" %}
-{% set version = "0.4.1" %}
+{% set version = "1.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 736b154a26930894d47aca03fe8f6fc45ed718a8322ed0fad4c0a641c33e56b2
+  sha256: 613b6ca0955d75faa7320909cf443c1f99eb407db39ddb3cf8eb254859984c5a
 
 build:
   number: 0
@@ -26,6 +26,7 @@ requirements:
   run:
     - fs >=2.4.11
     - fs-s3fs >=1.1.1
+    - fs.smbfs >=0.6.3
     - jupyterlab >=4,<5
     - jupyter_server >=2,<3
     - python >=3.7
@@ -33,6 +34,10 @@ requirements:
 test:
   imports:
     - jupyterfs
+  requires:
+    - pip
+  commands:
+    - pip check
 
 about:
   home: http://github.com/jpmorganchase/jupyter-fs
@@ -40,9 +45,7 @@ about:
   license_family: Apache
   license_file: LICENSE
   summary: A Filesystem-like multi-contents manager backend for Jupyter
-
-  description: |
-    A Filesystem-like mult-contents manager backend for Jupyter
+  description: A Filesystem-like mult-contents manager backend for Jupyter
   dev_url: https://github.com/jpmorganchase/jupyter-fs
 
 extra:
