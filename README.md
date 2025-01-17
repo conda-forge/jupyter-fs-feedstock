@@ -13,7 +13,6 @@ Development: https://github.com/jpmorganchase/jupyter-fs
 
 A Filesystem-like mult-contents manager backend for Jupyter
 
-
 Current build status
 ====================
 
