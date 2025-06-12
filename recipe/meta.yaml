@@ -1,5 +1,5 @@
 {% set name = "jupyter-fs" %}
-{% set version = "1.0.1" %}
+{% set version = "1.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 859d43f6e306932715a604cb3cf11402371f01b5fe6f2b42dbee3c9f51f9737d
+  sha256: 5967baf485db81b09292afda0bbc8f69a70d02b19eba135aa72bd3d3ccbdf7c9
 
 build:
   number: 0
