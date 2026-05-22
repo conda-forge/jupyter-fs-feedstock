@@ -16,17 +16,17 @@ build:
 
 requirements:
   host:
-    - jupyter-packaging
-    - nodejs
+    - python {{ python_min }}
     - pip
+    - nodejs
+    - pnpm
     - hatchling >=1.3.1
     - hatch-js
     - jupyterlab >=4,<5
-    - python {{ python_min }}
   run:
+    - python >={{ python_min }}
     - jupyterlab >=4,<5
     - jupyter_server >=2,<3
-    - python >={{ python_min }}
   run_constrained:
     - fs >=2.4.11
     - fs-s3fs >=1.1.1
