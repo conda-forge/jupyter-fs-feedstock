@@ -1,22 +1,25 @@
-{% set name = "jupyter-fs" %}
-{% set version = "1.2.1" %}
+schema_version: 1
+
+context:
+  name: jupyter-fs
+  version: "1.2.1"
 
 package:
-  name: {{ name|lower }}
-  version: {{ version }}
+  name: ${{ name|lower }}
+  version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name | replace('-', '_') }}-${{ version }}.tar.gz
   sha256: 6632fefd57e84ebb885ccde83bdbb5a3f3d0134764af8bd9d86344d9659fac76
 
 build:
-  number: 0
+  number: 1
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script: ${{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python {{ python_min }}
+    - python ${{ python_min }}
     - pip
     - nodejs
     - pnpm
@@ -24,33 +27,32 @@ requirements:
     - hatch-js
     - jupyterlab >=4,<5
   run:
-    - python >={{ python_min }}
+    - python >=${{ python_min }}
     - jupyterlab >=4,<5
     - jupyter_server >=2,<3
-  run_constrained:
+  run_constraints:
     - fs >=2.4.11
     - fs-s3fs >=1.1.1
     - fs.smbfs >=0.6.3
     - fsspec >=2023.6.0
     - s3fs >=2024
 
-test:
-  imports:
-    - jupyterfs
-  requires:
-    - pip
-    - python {{ python_min }}
-  commands:
-    - pip check
+tests:
+  - python:
+      imports:
+        - jupyterfs
+      pip_check: true
+      python_version:
+        - ${{ python_min }}
+        - "*"
 
 about:
-  home: http://github.com/jpmorganchase/jupyter-fs
   license: Apache-2.0
-  license_family: Apache
   license_file: LICENSE
   summary: A Filesystem-like multi-contents manager backend for Jupyter
   description: A Filesystem-like mult-contents manager backend for Jupyter
-  dev_url: https://github.com/jpmorganchase/jupyter-fs
+  homepage: http://github.com/jpmorganchase/jupyter-fs
+  repository: https://github.com/jpmorganchase/jupyter-fs
 
 extra:
   recipe-maintainers:
